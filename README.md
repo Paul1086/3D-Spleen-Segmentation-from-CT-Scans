@@ -8,10 +8,8 @@ The pipeline includes voxel-spacing normalization, CT intensity windowing, 3D pa
 
 | Metric | Result |
 |---|---:|
-| Best validation 3D Dice | 0.7190 |
 | Mean held-out test 3D Dice | **0.8083** |
 | Mean held-out test 3D IoU | **0.6984** |
-| Best checkpoint epoch | 150 |
 
 Dice and IoU were calculated over the complete 3D prediction and ground-truth volumes.
 
