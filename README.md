@@ -68,3 +68,87 @@ Task09_Spleen/
 ├── labelsTr/
 ├── imagesTs/
 └── dataset.json
+```
+The CT volumes and annotations are not included in this repository.
+
+## Repository Structure
+
+```text
+3D-Spleen-Segmentation-from-CT-Scans/
+├── configs/
+│   └── train.yaml
+├── results/
+│   ├── sample_results_1.png
+│   ├── sample_results_2.png
+│   ├── sample_results_3.png
+│   ├── training_loss.png
+│   └── validation_dice.png
+├── scripts/
+│   ├── inspect_data.py
+│   ├── check_pipeline.py
+│   ├── train.py
+│   ├── evaluate.py
+│   └── plot_test_samples.py
+├── src/
+│   └── spleen3d/
+│       ├── __init__.py
+│       ├── data.py
+│       ├── loaders.py
+│       ├── metrics.py
+│       ├── model.py
+│       └── transforms.py
+├── .gitignore
+├── pyproject.toml
+├── requirements.txt
+└── README.md
+```
+
+## Running the Project
+
+Install the required packages:
+
+```bash
+pip install -r requirements.txt
+pip install -e .
+```
+
+Update the dataset and output paths in `configs/train.yaml`:
+
+```yaml
+data:
+  root_dir: "/path/to/Task09_Spleen"
+  cache_dir: "/path/to/cache"
+
+output:
+  directory: "/path/to/outputs/full_training"
+```
+
+Train the model:
+
+```bash
+python scripts/train.py --config configs/train.yaml
+```
+
+Evaluate the best checkpoint:
+
+```bash
+python scripts/evaluate.py \
+  --config configs/train.yaml \
+  --checkpoint outputs/full_training/best_model.pt
+```
+
+
+Generate segmentation figures for the held-out test cases:
+
+```bash
+python scripts/plot_test_samples.py \
+  --config configs/train.yaml \
+  --checkpoint outputs/full_training/best_model.pt
+```
+
+
+## Author
+
+**Sudipta Paul**  
+Ph.D. Candidate, Rensselaer Polytechnic Institute
+Email: pauls5@rpi.edu
