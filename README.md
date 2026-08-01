@@ -19,15 +19,15 @@ The figures show representative 2D axial slices from held-out 3D CT volumes. The
 
 ### Sample Result 1
 
-![Sample Result 1](results/sample_result_1.png)
+![Sample Result 1](results/sample_results_1.png)
 
 ### Sample Result 2
 
-![Sample Result 2](results/sample_result_2.png)
+![Sample Result 2](results/sample_results_2.png)
 
 ### Sample Result 3
 
-![Sample Result 3](results/sample_result_3.png)
+![Sample Result 3](results/sample_results_3.png)
 
 Ground-truth boundaries are shown in green, while predicted boundaries are shown with dashed magenta contours.
 
