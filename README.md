@@ -55,7 +55,7 @@ The model is a 3D U-Net with:
 - Residual convolutional units
 - Dropout regularization
 - Approximately 4.8 million trainable parameters
-
+- 
 ## Dataset
 
 This project uses the `Task09_Spleen` dataset from the Medical Segmentation Decathlon.
